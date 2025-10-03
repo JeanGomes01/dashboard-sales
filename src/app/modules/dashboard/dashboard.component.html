@@ -30,26 +30,7 @@
     <strong>Faturamento Total: R$ {{ totalRevenue }}</strong>
   </p>
 
-  <table border="1" cellpadding="6">
-    <thead>
-      <tr>
-        <th>Produto</th>
-        <th>Categoria</th>
-        <th>Quantidade</th>
-        <th>Preço Unitário</th>
-        <th>Data</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let sale of sales">
-        <td>{{ sale.product }}</td>
-        <td>{{ sale.category }}</td>
-        <td>{{ sale.quantity }}</td>
-        <td>R$ {{ sale.price }}</td>
-        <td>{{ sale.date | date : "dd/MM/yyyy" }}</td>
-        <td>R$ {{ sale.price * sale.quantity }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="h-[400px] w-[400px] mt-4 flex">
+    <canvas #doughnutCanvas></canvas>
+  </div>
 </main>
