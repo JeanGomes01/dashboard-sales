@@ -1,0 +1,63 @@
+<div class="flex h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <aside
+    class="bg-gray-900 text-white flex flex-col transition-all duration-300 ease-in-out"
+    [class.w-64]="isOpen"
+    [class.w-16]="!isOpen"
+  >
+    <!-- Cabeçalho sem a linha cinza -->
+    <div class="flex items-center justify-between p-4">
+      <span *ngIf="isOpen" class="text-2xl font-bold">Menu</span>
+
+      <!-- Botão chevron estilizado -->
+      <button
+        (click)="isOpen = !isOpen"
+        class="text-gray-300 hover:text-white bg-gray-800 hover:bg-gray-700 p-2 rounded-full shadow-md transition-all duration-300 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 transition-transform duration-300"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          [class.rotate-180]="!isOpen"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="flex-1 p-4 space-y-2">
+      <a
+        routerLink="/dashboard"
+        class="flex items-center gap-2 px-3 py-2 rounded hover:bg-gray-700"
+      >
+        📊 <span *ngIf="isOpen">Dashboard</span>
+      </a>
+      <a
+        routerLink="/clientes"
+        class="flex items-center gap-2 px-3 py-2 rounded hover:bg-gray-700"
+      >
+        👥 <span *ngIf="isOpen">Clientes</span>
+      </a>
+      <a
+        routerLink="/materiais"
+        class="flex items-center gap-2 px-3 py-2 rounded hover:bg-gray-700"
+      >
+        📦 <span *ngIf="isOpen">Materiais</span>
+      </a>
+      <a
+        routerLink="/orcamento"
+        class="flex items-center gap-2 px-3 py-2 rounded hover:bg-gray-700"
+      >
+        📑 <span *ngIf="isOpen">Orçamentos</span>
+      </a>
+    </nav>
+  </aside>
+</div>

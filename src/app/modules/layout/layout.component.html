@@ -1,0 +1,15 @@
+<div class="flex">
+  <app-sidebar></app-sidebar>
+  <main class="flex flex-col w-full">
+    <header class="bg-white shadow flex justify-between items-center px-6 py-4">
+      <h1 class="text-xl font-semibold">Dashboard - Sales</h1>
+      <button
+        (click)="logout()"
+        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition"
+      >
+        Logout
+      </button>
+    </header>
+    <router-outlet></router-outlet>
+  </main>
+</div>
