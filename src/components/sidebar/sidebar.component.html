@@ -1,15 +1,12 @@
 <div class="flex h-screen bg-gray-100">
-  <!-- Sidebar -->
   <aside
     class="bg-gray-900 text-white flex flex-col transition-all duration-300 ease-in-out"
     [class.w-64]="isOpen"
     [class.w-16]="!isOpen"
   >
-    <!-- Cabeçalho sem a linha cinza -->
     <div class="flex items-center justify-between p-4">
       <span *ngIf="isOpen" class="text-2xl font-bold">Menu</span>
 
-      <!-- Botão chevron estilizado -->
       <button
         (click)="isOpen = !isOpen"
         class="text-gray-300 hover:text-white bg-gray-800 hover:bg-gray-700 p-2 rounded-full shadow-md transition-all duration-300 cursor-pointer"
@@ -32,7 +29,6 @@
       </button>
     </div>
 
-    <!-- Navegação -->
     <nav class="flex-1 p-4 space-y-2">
       <a
         routerLink="/dashboard"

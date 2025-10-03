@@ -59,7 +59,6 @@ export class DashboardComponent implements AfterViewInit, OnInit {
             .reduce((sum, s) => sum + s.price * s.quantity, 0)
         );
 
-        // 🔹 Cria os degradês AQUI
         const ctx = this.doughnutCanvas.nativeElement.getContext('2d')!;
 
         const gradientBlue = ctx.createLinearGradient(0, 0, 0, 400);
@@ -78,7 +77,6 @@ export class DashboardComponent implements AfterViewInit, OnInit {
         gradientGreen.addColorStop(0, '#56ab2f');
         gradientGreen.addColorStop(1, '#a8e063');
 
-        // 🔹 Instancia o gráfico já usando os gradientes
         this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
           type: 'doughnut',
           data: {
@@ -119,7 +117,6 @@ export class DashboardComponent implements AfterViewInit, OnInit {
       finalize(() => console.log('Finalizado carregamento de vendas'))
     );
 
-    // Receita total
     this.salesService.getTotalRevenue().subscribe((total) => {
       this.totalRevenue = total;
     });
